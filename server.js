@@ -2,7 +2,8 @@
 const express = require('express');
 //creates an express.js instance 
 const app = express();
-
+const cors = require("cors");
+app.use(cors());
 //config Express.js
 app.use(express.json())
 app.set('port', 3000) //setting port to 3000
