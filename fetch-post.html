@@ -19,7 +19,8 @@
         fetch('https://cst3145week14nour.herokuapp.com/collection/products', {
             method: 'POST', // set the HTTP method as 'POST'
             headers: {
-                'Content-Type': 'application/json', // set the data type as JSON
+                'Content-Type': 'application/json',// set the data type as JSON
+                'Access-Control-Allow-Origin': '*' 
             },
             body: JSON.stringify(newProduct), // need to stringify the JSON object
         })
