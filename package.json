@@ -1,0 +1,13 @@
+{
+  "name": "mongo-demo",
+  "main": "server.js",
+  "description": "",
+  "scripts": {
+    "start": "server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongodb": "^4.3.1"
+  }
+}
