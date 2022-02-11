@@ -10,6 +10,7 @@ app.set('port', 3000) //setting port to 3000
 // middleware has req and res
 app.use((req, res, next) =>{
     res.setHeader('Access-Control-Allow-Origin', '*'); // to allow any access so you wont get blocked 
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 })
 // connect to MongoDB
