@@ -10,7 +10,6 @@ app.set('port', 3000) //setting port to 3000
 // middleware has req and res
 app.use((req, res, next) =>{
     res.setHeader('Access-Control-Allow-Origin', '*'); // to allow any access so you wont get blocked 
-    res.header("Access-Control-Allow-Headers","*"); 
     next();
 })
 // connect to MongoDB
@@ -85,4 +84,4 @@ app.delete('/collection/:collectionName/:id', (req, res, next) => {
 // })
 
 const port = process.env.PORT || 3000
-app.listen(port)
+app.listen(3000)
