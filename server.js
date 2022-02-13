@@ -22,9 +22,9 @@ MongoClient.connect('mongodb+srv://nalhabashe:LOL1234567@cluster0.8j2zj.mongodb.
     db = client.db('webstore')
 })
 // display a message for root path to show the api is working 
-app.get("/", (req, res, next) =>{
- res.send("Select a collection, e.g., /collection/messages")
-})
+app.get("/", (req, res, next) => {
+    return res.sendFile(__dirname + "/fetch-post.html");
+    });
 
 // get the collection name
 app.param('collectionName', (req, res, next, collectionName) => {
