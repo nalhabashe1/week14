@@ -20,7 +20,7 @@
             headers: {
                 'Content-Type': 'application/json',// set the data type as JSON
             },
-            body: JSON.stringify(newProduct), // need to stringify the JSON object
+            body: JSON.parse(JSON.stringify(newProduct)), // need to stringify the JSON object
         })
             .then(response => response.json())
             .then(responseJSON => {
