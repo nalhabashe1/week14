@@ -6,12 +6,11 @@ const app = express();
 app.use(cors());
 //config Express.js
 app.use(express.json())
-
-
 app.set('port', 3000) //setting port to 3000
 // middleware has req and res
 app.use((req, res, next) =>{
     res.setHeader('Access-Control-Allow-Origin', '*'); // to allow any access so you wont get blocked 
+    res.header("Access-Control-Allow-Headers","*");
     next();
 })
 // connect to MongoDB
@@ -24,7 +23,7 @@ MongoClient.connect('mongodb+srv://nalhabashe:LOL1234567@cluster0.8j2zj.mongodb.
 // display a message for root path to show the api is working 
 app.get("/", (req, res, next) => {
     return res.sendFile(__dirname + "/fetch-post.html");
-    });
+});
 
 // get the collection name
 app.param('collectionName', (req, res, next, collectionName) => {
@@ -86,4 +85,6 @@ app.delete('/collection/:collectionName/:id', (req, res, next) => {
 // })
 
 const port = process.env.PORT || 3000
-app.listen(3000)
+// app.listen(3000)
+app.listen(port,()=> {console.log('express server is runnimg at localhost:3000')
+})
